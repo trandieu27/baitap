@@ -1,0 +1,297 @@
+/* =====================================================
+   CHUNG CHO CẢ TRANG
+   ===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Tahoma, sans-serif;   /* font chung */
+  background-color: #f0f4f8;                /* màu nền trang (HEX) */
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Group selector: định dạng chung các tiêu đề */
+h1, h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #264653;
+}
+
+
+/* =====================================================
+   BÀI 1: PROFILE CARD
+   ===================================================== */
+
+/* Class: khung thông tin (Box Model đầy đủ) */
+.profile {
+  width: 400px;
+  max-width: 100%;
+  margin: 30px auto;
+  border: 2px solid #2a9d8f;
+  border-radius: 12px;
+  background-color: white;                  /* tên màu */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* RGBA */
+  overflow: hidden;
+}
+
+.profile-body {
+  padding: 20px;
+}
+
+/* ID: ảnh đại diện hình tròn */
+#avatar {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  border: 4px solid #2a9d8f;
+  object-fit: cover;
+}
+
+/* Element: đoạn văn */
+p {
+  font-size: 16px;
+  color: rgb(60, 60, 60);                   /* RGB */
+}
+
+/* Descendant: đoạn văn nằm trong khung .profile */
+.profile p {
+  font-style: italic;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Liên kết + pseudo-class */
+a {
+  color: #2a9d8f;
+  text-decoration: none;                    /* bỏ gạch chân */
+}
+a:hover {
+  color: #e76f51;                           /* đổi màu khi rê chuột */
+}
+
+
+/* =====================================================
+   BÀI 2: BẢNG ĐIỂM
+   ===================================================== */
+.table-wrapper {
+  position: relative;                       /* mốc cho nhãn */
+  width: 90%;                               /* % */
+  max-width: 700px;                         /* giới hạn chiều rộng */
+  margin: 40px auto;                        /* căn giữa */
+  padding: 3rem 20px 20px;                  /* rem + px */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.table-wrapper h2 {
+  margin-top: 0;
+}
+
+/* Nhãn "BẢNG ĐIỂM" góc trên bên phải */
+.label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e63946;
+  color: white;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 5px 14px;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Dòng tiêu đề */
+th {
+  background-color: #264653;
+  color: white;
+}
+
+/* Căn giữa cột STT (cột đầu) và Điểm (cột cuối) */
+th:first-child, td:first-child,
+th:last-child,  td:last-child {
+  text-align: center;
+}
+
+/* Dòng chẵn/lẻ xen kẽ */
+tbody tr:nth-child(odd)  { background-color: #ffffff; }
+tbody tr:nth-child(even) { background-color: #f1f5f9; }
+
+/* Rê chuột vào dòng */
+tbody tr:hover {
+  background-color: #cfe8ff;
+}
+
+/* Dòng Điểm trung bình */
+tfoot td {
+  font-weight: bold;
+  background-color: #ffe8a3;
+}
+tfoot td:first-child {
+  text-align: right;
+}
+
+
+/* =====================================================
+   BÀI 3: FORM ĐĂNG KÝ
+   ===================================================== */
+
+/* Flexbox: căn form giữa theo chiều ngang */
+.form-page {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.form-container {
+  position: relative;                       /* mốc cho nhãn */
+  width: 100%;
+  max-width: 600px;
+  padding: 3rem 30px 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+  margin-top: 0;
+}
+
+/* Nhãn "ĐĂNG KÝ MỚI" góc trên bên phải */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #e63946;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 4px;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 10px;
+  font-weight: bold;
+  color: #264653;
+}
+
+/* Họ tên + Email cùng hàng; màn hình hẹp tự xuống dòng */
+.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.row .field {
+  flex: 1 1 220px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.field > label,
+.field-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* Các ô nhập liệu: cùng chiều rộng, nền, viền, bo góc */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fafafa;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Khi chọn vào ô nhập liệu */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2a9d8f;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.25);
+}
+
+/* Radio và Checkbox xếp ngang */
+.options {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Các nút cuối form */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 22px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-reset {
+  background-color: #e0e0e0;
+}
+
+.btn-submit {
+  background-color: #2a9d8f;
+  color: white;
+}
+.btn-submit:hover {
+  background-color: #21867a;
+  transform: translateY(-2px);
+}

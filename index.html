@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập HTML và CSS</title>
+
+  <!-- EXTERNAL CSS: giao diện chung của cả trang -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- INTERNAL CSS: tiêu đề và danh sách sở thích của Bài 1 -->
+  <style>
+    .profile-header {
+      background-image: linear-gradient(to right, #2a9d8f, #264653);
+      padding: 20px;
+    }
+    .profile-header h1 {
+      color: white;
+      font-size: 2rem;
+      letter-spacing: 3px;
+      margin: 0;
+    }
+    .section-title {
+      font-style: italic;
+      color: #264653;
+      border-bottom: 2px dashed #2a9d8f;
+      padding-bottom: 5px;
+    }
+    .hobbies {
+      list-style-type: square;
+      padding-left: 30px;
+    }
+    .hobbies li {
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+    .hobbies li:hover {
+      background-color: #ffe8d6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       BÀI 1: THÔNG TIN CÁ NHÂN + DANH SÁCH SỞ THÍCH
+       ===================================================== -->
+  <div class="profile">
+    <div class="profile-header">
+      <h1>Thông tin cá nhân</h1>
+    </div>
+
+    <div class="profile-body">
+      <img id="avatar"
+           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTmhnjmYMo_aooM4M9BG5u2uYL3qAtk9Jpg3naH0KUmw&s=10"
+           alt="Ảnh đại diện">
+
+      <!-- INLINE CSS: đổi màu họ tên -->
+      <p style="color: crimson; font-weight: bold;">Họ tên: Trần Thị Xuân Diệu</p>
+      <p>Ngày sinh: 04/11/2007</p>
+      <p>Lớp: Công nghệ marketing 1</p>
+
+      <h2 class="section-title">Sở thích</h2>
+      <ul class="hobbies">
+        <li>Nấu ăn</li>
+        <li>Nghe nhạc</li>
+        <li>Du lịch</li>
+      </ul>
+
+      <p>
+        Liên kết:
+        <a href="https://www.facebook.com/share/1Gr4BMkVer/?mibextid=wwXIfr" target="_blank">Facebook</a>
+        |
+        <a href="https://github.com/trandieu27" target="_blank">GitHub</a>
+      </p>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       BÀI 2: BẢNG ĐIỂM SINH VIÊN
+       ===================================================== -->
+  <div class="table-wrapper">
+    <span class="label">BẢNG ĐIỂM</span>
+    <h2>2. Bảng điểm sinh viên</h2>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Môn học</th>
+          <th>Điểm</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Quản trị học</td><td>10</td></tr>
+        <tr><td>2</td><td>Thống kê</td><td>10</td></tr>
+        <tr><td>3</td><td>Cơ sở dữ liệu</td><td>10</td></tr>
+        <tr><td>4</td><td>Luật doanh nghiệp</td><td>10</td></tr>
+        <tr><td>5</td><td>Pháp luật đại cương</td><td>10</td></tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Điểm trung bình</td>
+          <td>10</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+
+  <!-- =====================================================
+       BÀI 3: FORM ĐĂNG KÝ SINH VIÊN
+       ===================================================== -->
+  <div class="form-page">
+    <div class="form-container">
+      <span class="badge">ĐĂNG KÝ MỚI</span>
+      <h2>3. Form đăng ký sinh viên</h2>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Thông tin đăng ký</legend>
+
+          <!-- Họ tên + Email cùng một hàng -->
+          <div class="row">
+            <div class="field">
+              <label for="ho-ten">Họ tên *</label>
+              <input type="text" id="ho-ten" name="ho_ten"
+                     placeholder="Nhập họ tên của bạn" required>
+            </div>
+            <div class="field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email"
+                     placeholder="abcde@gmail.com" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="mat-khau">Mật khẩu</label>
+            <input type="password" id="mat-khau" name="mat_khau"
+                   placeholder="Nhập mật khẩu">
+          </div>
+
+          <div class="field">
+            <span class="field-title">Giới tính</span>
+            <div class="options">
+              <label><input type="radio" name="gioi_tinh" value="Nam" required> Nam</label>
+              <label><input type="radio" name="gioi_tinh" value="Nu"> Nữ</label>
+              <label><input type="radio" name="gioi_tinh" value="Khac"> Khác</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field-title">Sở thích</span>
+            <div class="options">
+              <label><input type="checkbox" name="so_thich" value="Du lich"> Du lịch</label>
+              <label><input type="checkbox" name="so_thich" value="Doc sach"> Đọc sách</label>
+              <label><input type="checkbox" name="so_thich" value="Nghe nhac"> Nghe nhạc</label>
+              <label><input type="checkbox" name="so_thich" value="The thao"> Thể thao</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="nganh-hoc">Ngành học</label>
+            <select id="nganh-hoc" name="nganh_hoc">
+              <option value="CNTT">CNTT</option>
+              <option value="Kinh te">Kinh tế</option>
+              <option value="Dien tu">Điện tử</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="ghi-chu">Ghi chú</label>
+            <textarea id="ghi-chu" name="ghi_chu" rows="4"
+                      placeholder="Nhập ghi chú của bạn..."></textarea>
+          </div>
+
+          <div class="actions">
+            <button type="reset" class="btn-reset">Nhập lại</button>
+            <button type="submit" class="btn-submit">Gửi đăng ký</button>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
